@@ -8,12 +8,36 @@ Este proyecto documenta el diseño e implementación de una solución de gestió
 
 ## Implementacion
 ### Fase 1: Configuración de Temporary Access Pass (TAP) *
- **Objetivo:** Permitir el registro inicial de usuarios y dispositivos sin necesidad de una contraseña permanente.
-**Configuración:** 
-  * Habilitación de TAP en la directiva de *Authentication Methods* de Entra ID.
-    
-  * Definición de políticas: Duración del pase (ej. 1 a 8 horas), uso único (*One-time use*) y longitud del código. * 
-**Flujo Operativo:** 
-1. El Helpdesk genera un TAP para el nuevo usuario. 
-2. El usuario inicia sesión por primera vez únicamente con su UPN y el código TAP. 
-3. El sistema exige registrar un método fuerte (Microsoft Authenticator / SSPR) antes de continuar. 
+
+- En el apartado "Autentication Methods" ingresamos a "Temporary Access Pass"
+
+<img width="1118" height="734" alt="01-AuthMethods-Overview" src="https://github.com/user-attachments/assets/e03fcb06-da0b-4081-9cb8-be3fb736a132" />
+  
+- asignamos el estado "Enabled" para dejar el metodo activo y en "Target" dejamos "All Users" para establecer que este metodo aplica para todos los usuarios 
+
+<img width="1577" height="371" alt="01-TAP ON   TARGET" src="https://github.com/user-attachments/assets/b4dab196-6f9b-4946-a572-44dba93a9a1a" />
+
+- En el apartado "Configure" aplicamos los siguientes parametros:
+  - Duración mínima / máxima: 1 Hora / 8 horas.
+  - Require one-time use (uso único): Sí.
+
+<img width="1198" height="370" alt="01-TAP-Settings-Overview" src="https://github.com/user-attachments/assets/aa865ff9-7d8c-480d-a455-6ced2a95efe9" />
+
+Con estas configuraciones establecimos:
+ - Metodo de Autenticacion Activo
+ - Metodo de Autenticacion aplica para **todos** los usuarios
+ - Duración mínima / máxima
+ - Establecimos que el código solo puede usarse una vez
+
+---
+
+### Fase 2: Implementacion de TAP para el usuario final * 
+
+- Creamos al usuario
+
+<img width="685" height="565" alt="02-CreacionUser" src="https://github.com/user-attachments/assets/246371a4-0b7f-49c7-a963-296dd1800e55" />
+
+- Dentro del usuario, vamos al apartado "Authentication Methods" y vamos a agregar el TAP ingresando a "Add Authentication Method"
+- 
+
+
