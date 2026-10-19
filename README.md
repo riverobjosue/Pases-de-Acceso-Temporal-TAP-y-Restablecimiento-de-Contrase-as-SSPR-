@@ -35,7 +35,7 @@ Con estas configuraciones establecimos:
 
 - Creamos al usuario
 
-<img width="685" height="565" alt="02-CreacionUser" src="https://github.com/user-attachments/assets/246371a4-0b7f-49c7-a963-296dd1800e55" />
+
 
 - Dentro del usuario, vamos al apartado "Authentication Methods" y vamos a agregar el TAP ingresando a "Add Authentication Method"
 
