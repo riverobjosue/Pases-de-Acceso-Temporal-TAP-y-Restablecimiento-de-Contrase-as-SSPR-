@@ -60,6 +60,23 @@ Con esto, si vemos los detalles del TAP configurado para el usuario, veremos el 
 
 ---
 
+### Fase 4: Activación y validación de SSPR
 
+- Ingresamos al apartado "Password Reset" y en "Properties" establecemos "all" de esta manera activamos el SSPR para todos los usuarios.
+
+- 
+
+- En "Authentication Methods" establecemos que solo 1 método de autenticación es suficiente para proceder con el SSPR y *no* agregamos las "security questions" (preguntas de seguridad) como método válido ya que estan cosideradas como un método débil.
+
+
+- si ingresamos a "Auth Methods Policy" vemos cuales son los métodos de autenticación válidos (Notese como los SMS o Email OTP estan desactivados ya que se consideran vulnerables ante phishing)
+
+-   
+
+- Con esta configuracion establecimos:
+ - SSPR habilitado para todos los usuarios
+ - 1 metodo de autenticación es válido para comenzar el proceso de SSPR
+ - Desactivamos la posibilidad de responder preguntas de seguridad debido a que no se considera un metodo seguro
+ - Desactivamos métodos de autenticación como SMS o Email OTP ya que son vulnerables a Phishing
 
 
