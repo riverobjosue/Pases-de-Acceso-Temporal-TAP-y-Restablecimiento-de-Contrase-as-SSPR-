@@ -31,13 +31,35 @@ Con estas configuraciones establecimos:
 
 ---
 
-### Fase 2: Implementacion de TAP para el usuario final * 
+### Fase 2: Implementacion de TAP para el usuario final
 
 - Creamos al usuario
 
 <img width="685" height="565" alt="02-CreacionUser" src="https://github.com/user-attachments/assets/246371a4-0b7f-49c7-a963-296dd1800e55" />
 
 - Dentro del usuario, vamos al apartado "Authentication Methods" y vamos a agregar el TAP ingresando a "Add Authentication Method"
-- 
+
+-
+
+- Seleccionamos Temporary Access Pass, establecemos la duracion del codigo (seleccionamos el minimo de 1 hora) y por defecto el codigo es de un solo uso
+
+-
+
+Con esto, si vemos los detalles del TAP configurado para el usuario, veremos el codigo, el link por el cual va a poder registrarse por primera vez y la duracion del TAP.
+
+---
+
+### Fase 3: Registro con TAP
+
+- Ingresamos el UPN y vemos que Microsoft solicita el TAP
+-
+- Automaticamente, nos solicita agregar un metodo de autenticacion, en este caso agregamos "Microsoft Authenticator"
+-
+- Una vez configurado Microsoft Authenticator, podremos ingresar
+-  
+
+---
+
+
 
 
