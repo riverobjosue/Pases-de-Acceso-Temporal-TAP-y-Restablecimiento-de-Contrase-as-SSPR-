@@ -75,8 +75,25 @@ Con esto, si vemos los detalles del TAP configurado para el usuario, veremos el 
 
 - Con esta configuracion establecimos:
  - SSPR habilitado para todos los usuarios
- - 1 metodo de autenticación es válido para comenzar el proceso de SSPR
+ - 1 método de autenticación es suficiente para comenzar el proceso de SSPR
  - Desactivamos la posibilidad de responder preguntas de seguridad debido a que no se considera un metodo seguro
  - Desactivamos métodos de autenticación como SMS o Email OTP ya que son vulnerables a Phishing
+
+**Verificación**
+
+Mediante el link de recuperacion de contraseña, ingresamos el UPN 
+
+-
+
+Como anteriormente registramos Microsoft Authenticator como metodo autenticacion, podemos seleccionar esta variente para que nos llegue un codigo. 
+
+-
+
+Una vez ingresado el codigo, ya podemos generar una nueva contraseña
+
+-
+
+Una vez aprobado el cambio de contraseña, el usuario podra ingresar a su cuenta. 
+
 
 
