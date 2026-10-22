@@ -163,9 +163,14 @@ Con esto, si vemos los detalles del TAP configurado para el usuario, veremos el 
 
 <img width="1531" height="511" alt="Audit-SSPR-Overview" src="https://github.com/user-attachments/assets/d96238b8-6b3e-4fbc-8f59-0294bd7bd9c6" />
 
+##  Conclusiones y Consideraciones de Seguridad
 
+**Eliminación del Vector de Phishing Inicial:** El uso de un Pase de Acceso Temporal (TAP) de un solo uso o duración limitada permite resolver el problema clásico del "bootstrap" o contraseña temporal enviada por canales inseguros, garantizando que el primer ingreso se realice mediante credenciales fuertes, atadas al dispositivo físico del usuario.
 
-   
+**Trazabilidad y Visibilidad:** Gracias al análisis detallado de los Audit Logs y Sign-in Logs, se comprobó que es posible auditar cada etapa vista en este proyecto, desde la emisión de políticas (PolicyManagement), pasando por las interrupciones esperadas de cumplimiento normativo, hasta la resolución autónoma de incidentes mediante SSPR.
+
+**Optimización de Costos Operativos para Help Desk:** La correcta configuración y habilitación masiva de SSPR combinada con MFA reduce drásticamente la fricción operativa y los tiempos de atención del HelpDesk ante bloqueos o pérdidas de credenciales, trasladando la responsabilidad de recuperación de forma segura al usuario final.
+
 
 
 
