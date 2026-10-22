@@ -113,4 +113,60 @@ Con esto, si vemos los detalles del TAP configurado para el usuario, veremos el 
 
 ---
 
+### Auditoría y Trazabilidad de Eventos (Logs Analysis)
+
+## Auditoría del Pase de Acceso Temporal (TAP)
+
+- Habilitación del metodo TAP para los usuarios
+
+<img width="792" height="419" alt="Auditoria-TAP" src="https://github.com/user-attachments/assets/b8a96cc5-4c88-4c00-ba44-c9e639a304bb" />
+
+- Logs correspondientes al inicio de sesión del user:  
+
+<img width="874" height="418" alt="Audit-User-Overview" src="https://github.com/user-attachments/assets/6a91601b-6ed5-45ff-a4db-4c2a70e70a9d" />
+
+- El primer log se encuentra en estado “Interrupted”. El usuario ingreso con su codigo TAP, pero como Entra ID no le dio acceso debido a que necesitaba ingresar un nuevo metodo de Verificacion (agregamos Microsoft Authenticator) interrumpio el ingreso y redirigio a la a configuracion de este nuevo metodo.
+
+<img width="830" height="670" alt="Audit-User-TAP" src="https://github.com/user-attachments/assets/912fd37b-1a96-4fae-ade8-d9f870b6ee77" />
+<img width="829" height="218" alt="Audit-User-TAP-Detail" src="https://github.com/user-attachments/assets/6a844168-a005-432d-b8d6-c5840777f188" />
+
+- En el segundo log vemos que se vinculo exitosamente Microsoft Authenticator como método de autenticación
+
+<img width="678" height="633" alt="Audit-User-MicrosoftAuthApp" src="https://github.com/user-attachments/assets/20625659-a03e-43f9-a20c-b63f3b3b87a2" />
+
+- El tercer Log tambien se muestra en estado “Interrupted” debido a que Microsoft interrumpe el acceso para preguntar si el usuario quiere mantener su sesión abierta.
+
+<img width="713" height="704" alt="Audit-User-RemainSigIn" src="https://github.com/user-attachments/assets/0ac64572-401a-4b53-b961-bc42bbfdb534" />
+
+- El cuarto Log, ,muestra un inicio de sesion exitoso y la redireccion a “my profile”
+
+<img width="683" height="637" alt="Audit-User-OK" src="https://github.com/user-attachments/assets/d1d010c3-6d35-4d9f-886a-c95d46552879" />
+
+- El ultimo log es la redireccion a "my profile" realizada con exito
+
+<img width="679" height="637" alt="Audit-User-OKMyProfile" src="https://github.com/user-attachments/assets/f46e67b0-a965-4964-8e2b-40b313ac2a4a" />
+
+#### Auditoría de Autoservicio de Contraseñas (SSPR)
+
+- Habilitación del uso del SSPR para todos los Users
+
+<img width="522" height="459" alt="Audit-SSPR-All" src="https://github.com/user-attachments/assets/b55a507e-2fe5-41bd-8ed1-c329b1b14d90" />
+<img width="563" height="274" alt="Audit-SSPR-AllDetails" src="https://github.com/user-attachments/assets/f4e0b2d2-bff3-40d9-be2c-f86dc6d86608" />
+
+- Luego, vemos el proceso del SSPR documentado por Microsoft Entra ID:
+  - El user ingresa su UPN
+  - Entra ID muestra las opciones de para verificar su identidad (Mediante Microsoft Authenticator)
+  - Se documenta el inicio y la culminación de la verificacion mediante un codigo en Microsoft Authenticator
+  - Se documenta que el usuario completo exitosamente los pasos requeridos para reestablecer la contraseña
+  - El user agrega la nueva contraseña
+  - Se documenta que el usuario reseteo su contraseña exitosamente
+
+<img width="1531" height="511" alt="Audit-SSPR-Overview" src="https://github.com/user-attachments/assets/d96238b8-6b3e-4fbc-8f59-0294bd7bd9c6" />
+
+
+
+   
+
+
+
 
