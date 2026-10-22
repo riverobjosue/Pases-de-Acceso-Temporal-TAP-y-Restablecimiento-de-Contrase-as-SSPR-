@@ -25,10 +25,10 @@ Este proyecto documenta el diseño e implementación de una solución de gestió
 <img width="428" height="858" alt="01-TAP Settings" src="https://github.com/user-attachments/assets/042eed19-8722-401e-9739-2e5251d54b23" />
 
 **Con estas configuraciones establecimos:**
- - Metodo de Autenticacion Activo
- - Metodo de Autenticacion aplica para **todos** los usuarios
- - Duración mínima / máxima
- - Establecimos que el código solo puede usarse una vez
+  - Metodo de Autenticacion Activo
+  - Metodo de Autenticacion aplica para **todos** los usuarios
+  - Duración mínima / máxima
+  - Establecimos que el código solo puede usarse una vez
 
 ---
 
@@ -58,11 +58,17 @@ Con esto, si vemos los detalles del TAP configurado para el usuario, veremos el 
 ### Fase 3: Registro con TAP
 
 - Ingresamos el UPN y vemos que Microsoft solicita el TAP
--
+
+<img width="492" height="419" alt="03-UserSignIn-TAP" src="https://github.com/user-attachments/assets/f7c94402-3dc5-469a-86a4-6b051cd46a8d" />
+
 - Automaticamente, nos solicita agregar un metodo de autenticacion, en este caso agregamos "Microsoft Authenticator"
--
+
+<img width="547" height="425" alt="03-UserSignIn-NewAuthMethod" src="https://github.com/user-attachments/assets/51321b94-e785-41f0-8e9b-fd0a026d7e13" />
+
+
 - Una vez configurado Microsoft Authenticator, podremos ingresar
--  
+
+<img width="508" height="560" alt="03-UserSignIn-AuthMethodOK" src="https://github.com/user-attachments/assets/891f0250-219f-4332-8542-8386867b5f89" />
 
 ---
 
@@ -70,36 +76,41 @@ Con esto, si vemos los detalles del TAP configurado para el usuario, veremos el 
 
 - Ingresamos al apartado "Password Reset" y en "Properties" establecemos "all" de esta manera activamos el SSPR para todos los usuarios.
 
-- 
+<img width="503" height="189" alt="04-PasswordReset" src="https://github.com/user-attachments/assets/22f20c82-985c-464b-adfe-31819d32ab75" />
+
 
 - En "Authentication Methods" establecemos que solo 1 método de autenticación es suficiente para proceder con el SSPR y *no* agregamos las "security questions" (preguntas de seguridad) como método válido ya que estan cosideradas como un método débil.
 
+<img width="967" height="458" alt="04-AuthMethods" src="https://github.com/user-attachments/assets/1e8ce45e-3cf2-4ad9-b66b-70f0c6ebd203" />
 
 - si ingresamos a "Auth Methods Policy" vemos cuales son los métodos de autenticación válidos (Notese como los SMS o Email OTP estan desactivados ya que se consideran vulnerables ante phishing)
 
--   
-
+<img width="1055" height="660" alt="04-AuthMethods-Policy" src="https://github.com/user-attachments/assets/0ea5ab1d-fdcf-47e5-826b-8dbf712a1be1" />
+   
 - Con esta configuracion establecimos:
- - SSPR habilitado para todos los usuarios
- - 1 método de autenticación es suficiente para comenzar el proceso de SSPR
- - Desactivamos la posibilidad de responder preguntas de seguridad debido a que no se considera un metodo seguro
- - Desactivamos métodos de autenticación como SMS o Email OTP ya que son vulnerables a Phishing
+  - SSPR habilitado para todos los usuarios
+  - 1 método de autenticación es suficiente para comenzar el proceso de SSPR
+  - Desactivamos la posibilidad de responder preguntas de seguridad debido a que no se considera un metodo seguro
+  - Desactivamos métodos de autenticación como SMS o Email OTP ya que son vulnerables a Phishing
 
 **Verificación**
 
-Mediante el link de recuperacion de contraseña, ingresamos el UPN 
+-  Mediante el link de recuperacion de contraseña, ingresamos el UPN 
 
--
+<img width="394" height="381" alt="04-USER-SSPR" src="https://github.com/user-attachments/assets/01fa45ab-5823-46c1-82a1-e06554ed012b" />
 
-Como anteriormente registramos Microsoft Authenticator como metodo autenticacion, podemos seleccionar esta variente para que nos llegue un codigo. 
+- Como anteriormente registramos Microsoft Authenticator como metodo autenticacion, podemos seleccionar esta variente para que nos llegue un código. 
 
--
+<img width="532" height="499" alt="04-UserSSPR-Auth" src="https://github.com/user-attachments/assets/a109eb21-f7cc-46ac-82d1-cc505664d7fc" />
 
-Una vez ingresado el codigo, ya podemos generar una nueva contraseña
+- Una vez ingresado el codigo, ya podemos generar una nueva contraseña
 
--
+<img width="365" height="370" alt="04-UserSSPR-Password (1)" src="https://github.com/user-attachments/assets/5d7733de-c39e-4c99-89cd-f0a06e84a371" />
 
-Una vez aprobado el cambio de contraseña, el usuario podra ingresar a su cuenta. 
+- Una vez aprobado el cambio de contraseña, el usuario podra ingresar a su cuenta. 
+<img width="368" height="171" alt="04-UserSSPR-OK" src="https://github.com/user-attachments/assets/42139e99-a779-4a22-a6c6-31451039d2ac" />
+<img width="1682" height="735" alt="04-UserSSPR-AccessOK" src="https://github.com/user-attachments/assets/81e54d27-2043-4f2f-808c-3859b04cd92e" />
 
+---
 
 
